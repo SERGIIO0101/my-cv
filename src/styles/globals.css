@@ -1,0 +1,157 @@
+/* ===== Fuente de código ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+/* ===== Tailwind base ===== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Variables de diseño ===== */
+:root {
+  --color-1: #F5B027; /* principal */
+  --color-bg: #121212; /* fondo oscuro */
+  --color-text: #ffffff; /* texto principal */
+  --color-nav: #1f1f1f; /* navbar */
+  --font-code: 'Fira Code', monospace;
+}
+
+.mask-mancha {
+  border-radius: 0;
+  clip-path: polygon(
+    25% 5%, 75% 0%, 95% 30%, 100% 70%, 80% 95%, 50% 100%, 20% 85%, 0% 60%, 5% 25%
+  );
+}
+
+/* ===== Reset y base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-code);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* ===== Navbar ===== */
+nav {
+  background-color: var(--color-nav);
+  padding: 1rem 2rem;
+}
+
+nav .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-1);
+}
+
+/* ===== Home ===== */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-1);
+  letter-spacing: 1px;
+}
+
+.home h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-top: 0.5rem;
+}
+
+.home h2 .highlight {
+  color: var(--color-1);
+  font-weight: 600;
+}
+
+.home img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--color-1);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Botón CV */
+.home a.cv-button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-code);
+  background-color: var(--color-1);
+  color: var(--color-bg);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home a.cv-button:hover {
+  background-color: #d89a1f;
+  transform: translateY(-2px);
+}
+
+/* Home photo splash */
+.home-photo-container {
+  position: relative;
+}
+
+.background-splash {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 320px;
+  height: 320px;
+  background: rgba(245, 176, 39, 0.3);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+}

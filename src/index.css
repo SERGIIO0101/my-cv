@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+/* ===== Variables de diseño ===== */
+:root {
+  --color-1: #F5B027; /* color principal */
+  --color-bg: #121212; /* fondo principal oscuro */
+  --color-text: #ffffff; /* texto principal blanco */
+  --color-nav: #1f1f1f; /* navbar oscuro */
+  --font-code: 'Fira Code', monospace;
+}
+
+/* ===== Reset y base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-code);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* ===== Navbar ===== */
+nav {
+  background-color: var(--color-nav);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-1);
+}
+
+/* ===== Home ===== */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-1); /* nombre destacado */
+  letter-spacing: 1px;
+}
+
+.home h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-top: 0.5rem;
+}
+
+.home h2 .highlight {
+  color: var(--color-1);
+  font-weight: 600;
+}
+
+.home img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--color-1);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animación de la foto */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Botón CV */
+.home button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-code);
+  background-color: var(--color-1);
+  color: #121212;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.home button:hover {
+  background-color: #d89a1f; /* tono más oscuro */
+  transform: translateY(-2px);
+}
