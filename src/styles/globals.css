@@ -40,6 +40,7 @@ html, body {
 
 /* ===== Navbar ===== */
 nav {
+  position: relative; /* se desplaza con la página */
   background-color: var(--color-nav);
   padding: 1rem 2rem;
 }
@@ -48,6 +49,8 @@ nav .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav .logo {

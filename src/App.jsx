@@ -4,6 +4,7 @@ import MySkills from "./sections/MySkills";
 import About from "./sections/About";
 import MyProjects from "./sections/MyProjects";
 import Blog from "./sections/Blog";
+import Footer from "./components/footer";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <MySkills />
       <MyProjects />
       <Blog />
+      <Footer />
 
     </div>
   );
