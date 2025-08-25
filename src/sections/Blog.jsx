@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import PythonCert from "../assets/certificates/python_total.pdf";
-import pythonImg from "../assets/certificates/image/python.png";
-import officeImg from "../assets/certificates/image/ofimatica.png";
-import wordpressImg from "../assets/certificates/image/wordpress.png";
-import marketingImg from "../assets/certificates/image/marketing.png";
-import learningImg from "../assets/certificates/image/learning.png";
-import inglesImg from "../assets/certificates/image/ingles.png";
-import powerbiImg from "../assets/certificates/image/powerbi.png";
-import eduversioImg from "../assets/certificates/image/Eduversio.png";
-import utbImg from "../assets/certificates/image/UTB.png";
+import pythonImg from "../assets/certificates/Image/python.png";
+import officeImg from "../assets/certificates/Image/ofimatica.png";
+import wordpressImg from "../assets/certificates/Image/wordpress.png";
+import marketingImg from "../assets/certificates/Image/marketing.png";
+import learningImg from "../assets/certificates/Image/learning.png";
+import inglesImg from "../assets/certificates/Image/ingles.png";
+import powerbiImg from "../assets/certificates/Image/powerbi.png";
+import eduversioImg from "../assets/certificates/Image/Eduversio.png";
+import utbImg from "../assets/certificates/Image/UTB.png";
 
 export default function Blog() {
   const posts = [
