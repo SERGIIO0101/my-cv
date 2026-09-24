@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-[#1f1f1f] text-white py-6">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6">
         {/* Izquierda: Nombre y año */}
-        <span className="font-semibold">Sergio Severiche © 2025</span>
+        <span className="font-semibold">Sergio Severiche © {new Date().getFullYear()}</span>
 
         {/* Derecha: Iconos */}
         <div className="flex gap-4">

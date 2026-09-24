@@ -27,10 +27,10 @@ export default function Home() {
             Sergio Severiche
           </h1>
           <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
-            Software Developer <span className="text-[var(--color-1)]">Junior</span>
+            Full Stack Developer <span className="text-[var(--color-1)]">&amp; Databases</span>
           </h2>
           <p className="mt-4 text-lg md:text-xl text-white max-w-2xl">
-            Systems Engineering Student · Web Developer · Data Enthusiast
+            React · Node.js · FastAPI · SQL — Systems Engineer (coursework completed) building real software for real clients.
           </p>
           <a
             href={cv}
