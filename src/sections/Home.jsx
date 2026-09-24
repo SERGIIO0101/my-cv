@@ -66,7 +66,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Foto con barra de acento detrás */}
+        {/* Foto a color con bloque de acento desplazado detrás */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -74,11 +74,11 @@ export default function Home() {
           className="md:col-span-5 flex justify-center"
         >
           <div className="relative w-64 md:w-full max-w-sm aspect-[4/5]">
-            <div className="absolute left-1/2 -translate-x-1/2 -top-6 -bottom-6 w-1/3 bg-[var(--color-1)] rounded-sm"></div>
+            <div className="absolute inset-0 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 bg-[var(--color-1)] rounded-2xl"></div>
             <img
               src={profile}
               alt="Portrait of Sergio Severiche"
-              className="relative w-full h-full object-cover rounded-2xl grayscale contrast-110 shadow-2xl"
+              className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
             />
             <span className="absolute -bottom-4 -left-4 bg-[#0d0d0d] border border-white/15 rounded-full px-4 py-2 text-sm text-white shadow-lg"
               style={{ fontFamily: "var(--font-code)" }}

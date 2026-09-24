@@ -40,7 +40,7 @@ export default function Blog() {
       </p>
 
       {/* En celular: carrusel deslizable; desde sm: cuadrícula */}
-      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-4 w-screen sm:w-full sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible max-w-6xl">
+      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-4 w-[calc(100%+3rem)] sm:w-full sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible max-w-6xl">
         {posts.map((post, index) => (
           <motion.div
             key={index}
