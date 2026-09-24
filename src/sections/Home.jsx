@@ -33,35 +33,29 @@ export default function Home() {
             <path d="M3 14 C 60 4, 140 4, 200 10 S 280 16, 297 6" fill="none" stroke="var(--color-1)" strokeWidth="4" strokeLinecap="round" />
           </svg>
 
-          <div
-            className="mt-6 flex items-end justify-between gap-6 border-t border-white/15 pt-4"
-            style={{ fontFamily: "var(--font-code)" }}
-          >
-            <p className="text-lg md:text-xl font-semibold text-white">
-              Full Stack Developer
-              <span className="block text-gray-400 text-base font-normal">React · Node.js · FastAPI · SQL</span>
-            </p>
-            <span className="font-display text-4xl md:text-5xl text-white/90">2026</span>
-          </div>
-
-          <p className="mt-6 max-w-xl text-gray-300" style={{ fontFamily: "var(--font-code)" }}>
-            Systems Engineer (coursework completed) building real software for real clients — from the interface
-            to the database.
+          {/* Posicionamiento: qué problema resuelvo, no solo mi cargo */}
+          <p className="mt-6 max-w-xl text-2xl md:text-3xl font-bold leading-snug text-white">
+            I turn manual business processes into software that{" "}
+            <span className="text-[var(--color-1)]">quotes, bills and reports.</span>
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4" style={{ fontFamily: "var(--font-code)" }}>
+          <p className="mt-4 text-gray-400" style={{ fontFamily: "var(--font-code)" }}>
+            Full Stack Developer · React · Node.js · FastAPI · SQL
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3" style={{ fontFamily: "var(--font-code)" }}>
+            <a
+              href="#demo"
+              className="px-6 py-3 bg-[var(--color-1)] text-[#121212] font-semibold rounded-full shadow-lg hover:bg-white transition"
+            >
+              Try my live demo →
+            </a>
             <a
               href={cv}
               download="CV-Sergio-Severiche.pdf"
-              className="px-6 py-3 bg-[var(--color-1)] text-[#121212] font-semibold rounded-full shadow-lg hover:bg-white transition"
-            >
-              Download CV
-            </a>
-            <a
-              href="#projects"
               className="px-6 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-[var(--color-1)] hover:text-[var(--color-1)] transition"
             >
-              View projects
+              Download CV
             </a>
           </div>
         </motion.div>
@@ -84,7 +78,7 @@ export default function Home() {
               style={{ fontFamily: "var(--font-code)" }}
             >
               <span className="inline-block w-2 h-2 rounded-full bg-green-400 mr-2 align-middle"></span>
-              Open to work
+              Available now · Remote or on-site
             </span>
           </div>
         </motion.div>

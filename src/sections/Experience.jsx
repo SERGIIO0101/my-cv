@@ -25,6 +25,7 @@ const jobs = [
   },
   {
     role: "Biometric Authentication Specialist",
+    other: true,
     company: "Prosegur Procesos S.A.S",
     place: "Cartagena",
     period: "Jan 2026 – Jun 2026",
@@ -36,6 +37,7 @@ const jobs = [
   },
   {
     role: "Data Analyst & Field Researcher",
+    other: true,
     company: "Universidad de Cartagena & Alcaldía",
     place: "Cartagena",
     period: "Oct 2025 – Jan 2026",
@@ -45,6 +47,9 @@ const jobs = [
     ],
   },
 ];
+
+const mainJobs = jobs.filter((job) => !job.other);
+const otherJobs = jobs.filter((job) => job.other);
 
 export default function Experience() {
   return (
@@ -62,7 +67,7 @@ export default function Experience() {
         </motion.div>
 
         <ol className="relative border-l border-[#F5B027]/30">
-          {jobs.map((job, index) => (
+          {mainJobs.map((job, index) => (
             <motion.li
               key={job.role + job.company}
               initial={{ opacity: 0, x: -20 }}
@@ -88,6 +93,21 @@ export default function Experience() {
             </motion.li>
           ))}
         </ol>
+
+        <div className="mt-14 pt-8 border-t border-white/10">
+          <p className="text-sm text-gray-400">// other experience</p>
+          <ul className="mt-4 space-y-4">
+            {otherJobs.map((job) => (
+              <li key={job.role} className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <span>
+                  <span className="font-semibold">{job.role}</span>
+                  <span className="text-gray-400"> · {job.company}</span>
+                </span>
+                <span className="text-sm text-gray-500 shrink-0">{job.period}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

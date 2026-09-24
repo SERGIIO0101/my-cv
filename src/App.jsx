@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
+import DevGuardDemo from "./sections/DevGuardDemo";
 import MySkills from "./sections/MySkills";
 import Experience from "./sections/Experience";
 import About from "./sections/About";
@@ -14,6 +15,7 @@ function App() {
     <div>
       <Navbar />
       <Home />
+      <DevGuardDemo />
       <About />
       <Experience />
       <MySkills />

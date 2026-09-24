@@ -3,7 +3,7 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const milestones = [
-  { value: "5+", label: "Years building software" },
+  { value: "20+", label: "Public repos on GitHub" },
   { value: "7", label: "Featured projects" },
   { value: "500+", label: "Hours of specialized study" },
   { value: "100%", label: "Data goals met · UdeC & Alcaldía" },
