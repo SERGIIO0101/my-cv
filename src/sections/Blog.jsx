@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import PythonCert from "../assets/certificates/python_total.pdf";
-import pythonImg from "../assets/certificates/Image/python.png";
-import officeImg from "../assets/certificates/Image/ofimatica.png";
-import wordpressImg from "../assets/certificates/Image/wordpress.png";
-import marketingImg from "../assets/certificates/Image/marketing.png";
-import learningImg from "../assets/certificates/Image/learning.png";
+import pythonImg from "../assets/certificates/Image/python.webp";
+import wordpressImg from "../assets/certificates/Image/wordpress.webp";
 import inglesImg from "../assets/certificates/Image/ingles.png";
 import powerbiImg from "../assets/certificates/Image/powerbi.png";
 import eduversioImg from "../assets/certificates/Image/Eduversio.png";
@@ -15,37 +12,38 @@ export default function Blog() {
     { title: "Python Total - Advanced Programmer", date: "Apr 2025", excerpt: "Udemy - Federico Garay, 30.5h", link: PythonCert, img: pythonImg },
     { title: "Power BI Course", date: "2025", excerpt: "Acelerador IA + Power BI", link: null, img: powerbiImg },
     { title: "WordPress Development", date: "2025", excerpt: "Raiola - WordPress course", link: null, img: wordpressImg },
-    { title: "Digital Marketing", date: "2025", excerpt: "Neetwork - Online marketing", link: null, img: marketingImg },
     { title: "Cybersecurity", date: "2025", excerpt: "UTB - Fundamentals", link: null, img: utbImg },
     { title: "Project Management", date: "2025", excerpt: "EDUVERSIO - Project methodology", link: null, img: eduversioImg },
-    { title: "English Language", date: "2025", excerpt: "Colombo Americano - B2 level", link: null, img: inglesImg },
-    { title: "Office Automation", date: "2025", excerpt: "Coursera - University of Barcelona", link: null, img: officeImg },
-    { title: "Learning Theories & Pedagogical Models", date: "2025", excerpt: "Politécnico de Colombia", link: null, img: learningImg },
+    { title: "English Language", date: "2025", excerpt: "Colombo Americano - B1/B2 level", link: null, img: inglesImg },
   ];
 
   return (
-    <section id="blog" className="min-h-screen px-6 py-20 flex flex-col items-center bg-[#121212] text-white">
+    <section id="blog" className="md:min-h-screen px-6 py-16 md:py-20 flex flex-col items-center bg-[#121212] text-white">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-5xl font-bold text-[var(--color-1)] mb-12"
-        style={{ fontFamily: "var(--font-code)" }}
+        className="font-display text-5xl sm:text-6xl md:text-8xl mb-12 text-center"
       >
-        Certificates & Courses
+        Certificates <span className="text-[var(--color-1)]">&amp; Courses</span>
       </motion.h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
+      <p className="sm:hidden -mt-8 mb-4 text-sm text-gray-400" style={{ fontFamily: "var(--font-code)" }}>
+        Swipe to see more →
+      </p>
+
+      {/* En celular: carrusel deslizable; desde sm: cuadrícula */}
+      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-4 w-[calc(100%+3rem)] sm:w-full sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible max-w-6xl">
         {posts.map((post, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15, duration: 0.6 }}
+            transition={{ delay: (index % 3) * 0.15, duration: 0.6 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.03, boxShadow: "0 0 25px rgba(245,176,39,0.6)" }}
-            className="relative bg-[var(--color-nav)]/30 border border-[var(--color-1)] rounded-xl p-6 flex flex-col justify-between transition-all cursor-pointer group"
+            className="relative shrink-0 w-[80%] snap-center sm:w-auto bg-[#1f1f1f] border border-[#F5B027]/40 rounded-xl p-5 sm:p-6 flex flex-col justify-start transition-all"
           >
             <img src={post.img} alt={post.title} className="w-full h-32 object-cover rounded-lg mb-4" />
             <h3 className="text-xl font-semibold text-[var(--color-1)]">{post.title}</h3>
@@ -60,16 +58,7 @@ export default function Blog() {
               >
                 Download Certificate
               </a>
-            ) : (
-              <div className="relative mt-5 group">
-                <span className="inline-block bg-gray-700 text-gray-200 font-semibold px-4 py-2 rounded-lg shadow-lg cursor-not-allowed opacity-80 group-hover:opacity-100 transition">
-                  Coming Soon
-                </span>
-                <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 px-3 py-1 text-xs bg-gray-800 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                  Certificate not available yet
-                </span>
-              </div>
-            )}
+            ) : null}
           </motion.div>
         ))}
       </div>

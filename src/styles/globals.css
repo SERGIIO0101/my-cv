@@ -1,5 +1,3 @@
-/* ===== Fuente de código ===== */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
 /* ===== Tailwind base ===== */
 @tailwind base;
@@ -13,6 +11,8 @@
   --color-text: #ffffff; /* texto principal */
   --color-nav: #1f1f1f; /* navbar */
   --font-code: 'Fira Code', monospace;
+  --font-display: 'Anton', 'Impact', sans-serif; /* títulos gigantes */
+  --font-script: 'Caveat', cursive; /* palabras de acento */
 }
 
 .mask-mancha {
@@ -40,40 +40,12 @@ html, body {
 
 /* ===== Navbar ===== */
 nav {
-  position: relative; /* se desplaza con la página */
-  background-color: var(--color-nav);
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
 }
 
-nav .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-nav .logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-1);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: var(--color-text);
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: var(--color-1);
+/* Evita que la barra fija tape el título al saltar a una sección */
+section {
+  scroll-margin-top: 4rem;
 }
 
 /* ===== Home ===== */
@@ -157,4 +129,25 @@ nav ul li a:hover {
   border-radius: 50%;
   filter: blur(80px);
   z-index: -1;
+}
+
+/* ===== Estilo editorial (títulos gigantes + acento manuscrito) ===== */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+@layer components {
+  .bento-card {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+  }
 }
