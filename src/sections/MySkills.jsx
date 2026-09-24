@@ -11,17 +11,16 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col justify-center items-center bg-[#121212] text-white px-6 py-20"
+      className="md:min-h-screen flex flex-col justify-center items-center bg-[#121212] text-white px-6 py-16 md:py-20"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-5xl font-bold text-[var(--color-1)] mb-12"
-        style={{ fontFamily: "var(--font-code)" }}
+        className="font-display text-5xl sm:text-6xl md:text-8xl mb-12 text-center"
       >
-        My Skills
+        My <span className="text-[var(--color-1)]">Skills</span>
       </motion.h2>
 
       <div className="grid gap-6 sm:grid-cols-2 max-w-5xl w-full">

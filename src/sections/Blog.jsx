@@ -24,28 +24,32 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="min-h-screen px-6 py-20 flex flex-col items-center bg-[#121212] text-white">
+    <section id="blog" className="md:min-h-screen px-6 py-16 md:py-20 flex flex-col items-center bg-[#121212] text-white">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-5xl font-bold text-[var(--color-1)] mb-12"
-        style={{ fontFamily: "var(--font-code)" }}
+        className="font-display text-5xl sm:text-6xl md:text-8xl mb-12 text-center"
       >
-        Certificates & Courses
+        Certificates <span className="text-[var(--color-1)]">&amp; Courses</span>
       </motion.h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
+      <p className="sm:hidden -mt-8 mb-4 text-sm text-gray-400" style={{ fontFamily: "var(--font-code)" }}>
+        Swipe to see more →
+      </p>
+
+      {/* En celular: carrusel deslizable; desde sm: cuadrícula */}
+      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-4 w-screen sm:w-full sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible max-w-6xl">
         {posts.map((post, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15, duration: 0.6 }}
+            transition={{ delay: (index % 3) * 0.15, duration: 0.6 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.03, boxShadow: "0 0 25px rgba(245,176,39,0.6)" }}
-            className="relative bg-[var(--color-nav)]/30 border border-[var(--color-1)] rounded-xl p-6 flex flex-col justify-between transition-all cursor-pointer group"
+            className="relative shrink-0 w-[80%] snap-center sm:w-auto bg-[#1f1f1f] border border-[#F5B027]/40 rounded-xl p-5 sm:p-6 flex flex-col justify-between transition-all cursor-pointer group"
           >
             <img src={post.img} alt={post.title} className="w-full h-32 object-cover rounded-lg mb-4" />
             <h3 className="text-xl font-semibold text-[var(--color-1)]">{post.title}</h3>

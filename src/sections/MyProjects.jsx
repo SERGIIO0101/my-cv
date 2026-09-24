@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
+import ProjectArt from "../components/ProjectArt";
 
 // Para mostrar una captura, importa la imagen y asígnala en `image`
 // (ej: import aviImg from "../assets/projects/avi.png").
@@ -8,6 +9,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 const projects = [
   {
     title: "MiGestorLocal",
+    art: "desktop",
     category: "Desktop app · Local businesses",
     description:
       "Management software for local businesses: order tracking, invoicing with PDF generation and automatic email delivery.",
@@ -15,6 +17,7 @@ const projects = [
   },
   {
     title: "Fresh Hidrojacuzz",
+    art: "mail",
     category: "Desktop app · Client project",
     description:
       "Sales automation system for Fresh Jacuzzis: generates encrypted PDF quotes and sends transactional emails securely through Resend.",
@@ -23,6 +26,7 @@ const projects = [
   },
   {
     title: "DevGuard 4.0",
+    art: "quote",
     category: "Web app · Own product",
     description:
       "Smart quoting tool for freelance developers: prices projects by hours and complexity, exports technical proposals to PDF and sends summaries via WhatsApp. Includes legal data protection (Law 1581).",
@@ -31,6 +35,7 @@ const projects = [
   },
   {
     title: "AviSistema",
+    art: "dashboard",
     category: "Full stack web app",
     description:
       "Poultry farm management: bird batches, egg and meat production, supply inventory, health records and real-time reports with charts.",
@@ -39,6 +44,7 @@ const projects = [
   },
   {
     title: "Somos del Mundo",
+    art: "website",
     category: "Website · Client project",
     description:
       "Full website for author Jenny Montoya — psychology, migration and graphology — with a high-fidelity responsive interface.",
@@ -47,6 +53,7 @@ const projects = [
   },
   {
     title: "GOLDEN",
+    art: "brand",
     category: "Website · Own brand",
     description:
       "Premium brand site for software engineering and design services, with CSS glitch effects, interactive service nodes and a Habeas Data compliance flow.",
@@ -55,6 +62,7 @@ const projects = [
   },
   {
     title: "SIE - Academic Platform",
+    art: "school",
     category: "Web system",
     description:
       "School platform with multi-role login, grade management and dashboards for students, teachers and administrators.",
@@ -74,26 +82,18 @@ function Cover({ project, number }) {
     );
   }
 
-  // Portada tipográfica mientras no haya captura
+  // Ilustración SVG mientras no haya captura
   return (
-    <div className="relative w-full h-full flex items-end p-6 bg-gradient-to-br from-[#2a2a2a] via-[#1a1a1a] to-[#121212]">
-      <span className="absolute -top-6 -right-2 text-[9rem] md:text-[11rem] font-bold leading-none text-[#F5B027]/10 select-none">
-        {number}
-      </span>
-      <div className="relative flex flex-wrap gap-2">
-        {project.tech.slice(0, 3).map((tech) => (
-          <span key={tech} className="text-xs text-gray-400 border border-gray-700 rounded px-2 py-0.5">
-            {tech}
-          </span>
-        ))}
-      </div>
+    <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105">
+      <ProjectArt variant={project.art} />
+      <span className="absolute top-3 left-4 font-display text-4xl text-white/80 select-none">{number}</span>
     </div>
   );
 }
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-[#121212] px-6 py-24 text-white">
+    <section id="projects" className="bg-[#121212] px-6 py-16 md:py-24 text-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,11 +103,11 @@ export default function Projects() {
           className="mb-16"
           style={{ fontFamily: "var(--font-code)" }}
         >
-          <p className="text-sm text-gray-400">// selected work</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-1)]">Projects</h2>
+          <h2 className="font-display text-5xl sm:text-6xl md:text-8xl">Selected <span className="text-[var(--color-1)]">Projects</span></h2>
+          <p className="font-script text-3xl text-[var(--color-1)] -rotate-1 mt-1">real software, real clients</p>
         </motion.div>
 
-        <div className="flex flex-col gap-20 md:gap-28">
+        <div className="flex flex-col gap-14 md:gap-28">
           {projects.map((project, index) => {
             const number = String(index + 1).padStart(2, "0");
             const reversed = index % 2 === 1;
@@ -119,7 +119,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true, margin: "-80px" }}
-                className={`group grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
+                className={`group grid md:grid-cols-2 gap-5 md:gap-12 items-center ${
                   reversed ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >
@@ -138,7 +138,7 @@ export default function Projects() {
                     <span className="text-[var(--color-1)] font-semibold">{number}</span>
                     <span className="text-gray-400">{project.category}</span>
                   </div>
-                  <h3 className="mt-2 text-3xl md:text-4xl font-bold text-white group-hover:text-[var(--color-1)] transition-colors">
+                  <h3 className="font-display mt-2 text-4xl md:text-6xl text-white group-hover:text-[var(--color-1)] transition-colors">
                     {project.title}
                   </h3>
                   <p className="mt-4 text-gray-300 leading-relaxed">{project.description}</p>

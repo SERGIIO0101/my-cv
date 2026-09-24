@@ -48,7 +48,7 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-[#1a1a1a] px-6 py-24 text-white">
+    <section id="experience" className="bg-[#1a1a1a] px-6 py-16 md:py-24 text-white">
       <div className="max-w-4xl mx-auto" style={{ fontFamily: "var(--font-code)" }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,8 @@ export default function Experience() {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <p className="text-sm text-gray-400">// where I've worked</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-1)]">Experience</h2>
+          <h2 className="font-display text-5xl sm:text-6xl md:text-8xl">Experience</h2>
+          <p className="font-script text-3xl text-[var(--color-1)] -rotate-1 mt-1">where I've worked</p>
         </motion.div>
 
         <ol className="relative border-l border-[#F5B027]/30">
@@ -69,7 +69,7 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative pl-8 pb-12 last:pb-0"
+              className="relative pl-6 md:pl-8 pb-10 md:pb-12 last:pb-0"
             >
               <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-[var(--color-1)]" />
               <p className="text-sm text-[var(--color-1)]">{job.period}</p>
